@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snowfall Effect</title>
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(#123, #111);
+    }
+
+    .snowflake {
+      --size: 1vw;
+      width: var(--size);
+      height: var(--size);
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: -5vh;
+    }
+
+    @keyframes snowfall {
+      0% {
+        transform: translate3d(var(--left-ini), 0, 0);
+      }
+      100% {
+        transform: translate3d(var(--left-end), 110vh, 0);
+      }
+    }
+
+    /* Add more snowflakes by duplicating the .snowflake divs in HTML */
+    /* Ensure to adjust CSS properties (left, animation duration, etc.) for each snowflake manually */
+
+    /* added small blur every 6 snowflakes*/
+    .snowflake:nth-child(6n) {
+      filter: blur(1px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Snowflake elements will be dynamically generated here using JavaScript -->
+  <script>
+    // Create 50 snowflakes dynamically
+    for (let i = 1; i <= 50; i++) {
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      snowflake.style.setProperty('--size', `${Math.random() * 5 * 0.2}vw`);
+      snowflake.style.setProperty('--left-ini', `${Math.random() * 20 - 10}vw`);
+      snowflake.style.setProperty('--left-end', `${Math.random() * 20 - 10}vw`);
+      snowflake.style.left = `${Math.random() * 100}vw`;
+      snowflake.style.animation = `snowfall ${5 + Math.random() * 10}s linear infinite`;
+      snowflake.style.animationDelay = `-${Math.random() * 10}s`;
+
+      document.body.appendChild(snowflake);
+    }
+  </script>
+
+  <!-- YouTube button -->
+  <a href="https://www.youtube.com/" id="youtube"></a>
+</body>
+</html>

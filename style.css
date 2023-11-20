@@ -1,0 +1,860 @@
+body {
+  padding-bottom: 50px; /* Adjust this value based on the footer's height */
+  min-height: 100vh; /* Ensure a minimum height for the body */
+  position: relative;
+}
+
+header {
+  background: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 0.1px 0;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.logo img {
+  float: left;
+  margin: 4px 20px; /* Adjust the top and bottom margins to vertically center the logo */
+  width: 50px; /* Adjust the logo size */
+  height: auto;
+}
+
+iframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+nav {
+  /* Updated to center the navigation */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav ul li {
+  display: inline-block; /* Display items in a line */
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+nav ul li.home a {
+  border-color: #D9F3FF;
+}
+
+nav ul li.about a {
+  border-color: #D9F3FF;
+}
+
+nav ul li.portfolio a {
+  border-color: #D9F3FF;
+}
+
+nav ul li.blog a {
+  border-color: #D9F3FF;
+}
+
+nav ul li.contact a {
+  border-color: #D9F3FF;
+}
+
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #1BAA87;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: color 0.3s ease, transform 0.3s ease; /* Added transform property */
+  overflow: hidden;
+  font-family: 'Righteous', cursive;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease; /* Added transitions */
+  opacity: 0;
+}
+
+nav ul li a:hover::before {
+  width: 0;
+  height: 0;
+  opacity: 1;
+}
+
+nav ul li a:hover {
+  color: #fff; /* Change the color to something visible */
+  text-shadow: 0 0 5px #1BAA87; /* Add a text shadow for visibility */
+}
+
+main {
+  margin-top: 150px; /* Increase the margin-top value to create more space below the fixed header */
+  padding: 20px;
+  font-family: 'Righteous', cursive;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.container {
+  border: 2px solid #000000;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-top: 80px; /* Add margin-top to create space below the header */
+  max-width: 800px;
+}
+
+footer {
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  text-align: left;
+  background-color: #ffffff; /* Set the background to white */
+  padding: 8px; /* Adjust the padding for the footer */
+  color: black; /* Set the font color to black */
+  height: auto;
+}
+
+footer {
+  background-color: transparent;
+  color: #fff;
+  text-align: left;
+  padding: 1px 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 800px) {
+  .column {
+      flex: 50%;
+      max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+      flex: 100%;
+      max-width: 100%;
+  }
+}
+
+input[type=text],
+select,
+textarea {
+  width: 35%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+#home-content {
+  text-align: center;
+  padding: 100px 0; /* Adjust the padding according to your preference */
+}
+
+#home-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px; /* Add some margin below the heading */
+}
+
+#home-content p {
+  margin-bottom: 10px; /* Add margin between paragraphs for spacing */
+}
+
+#about-info {
+  text-align: center;
+  margin-top: 50px; /* You can adjust the margin-top value as needed */
+  padding: 0 80px; /* Add horizontal padding to center the content within the container */
+}
+
+#about-info ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+#about-info ul li {
+  margin: 10px 0;
+}
+
+#portfolio-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  margin: 20px auto 0; /* Add space on top */
+  max-width: 600px; /* Optional: Set a maximum width for the content */
+}
+
+/* Center the text inside the .portfolio-item */
+.portfolio-item {
+  margin-bottom: 10px;
+  margin-top: 100px;
+}
+
+/* Center the profile picture */
+.profile-picture {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.profile-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-section ul li {
+  margin-bottom: 8px;
+}
+
+/* Adjusting margins and paddings for better alignment */
+.profile-section ul, .profile-section p {
+  margin-bottom: 15px;
+}
+
+/* Center the social icons and download button */
+.social-icons, div {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  font-size: 36px;
+  margin: 0 10px;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  font-size: 36px; /* Adjust the font size to your preference */
+  margin: 0 10px; /* Add some space between icons */
+}
+
+.social-icons a.fab.fa-facebook {
+  color: #1877f2; /* Change the color to match the Facebook brand color */
+  transition: color 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.social-icons a.fab.fa-twitter {
+  color: #1da1f2; /* Change the color to match the Twitter brand color */
+  transition: color 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+/* Add hover effects to the icons */
+.social-icons a.fab.fa-facebook:hover {
+  color: #3b5998; /* Change the color on hover to a darker shade */
+}
+
+.social-icons a.fab.fa-twitter:hover {
+  color: #00acee; /* Change the color on hover to a darker shade */
+}
+
+.blog-container {
+  padding-top: 80px; /* Adjust the padding-top value as needed */
+  border: 2px solid rgba(0, 0, 0, 0); /* Transparent border */
+  border-radius: 5px;
+  background-color: transparent;
+  background-image: url('back3.jpg');
+  background-size: cover; /* Ensures the background image covers the container */
+  background-position: center; /* Centers the background image */
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* Center the .blog-container on the page */
+.blog-container {
+  width: 80%; /* Set a specific width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.blog-post {
+  border: 2px solid rgba(0, 0, 0, 0); /* Transparent border */
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.info {
+  width: 250px; /* Width of the info section */
+  max-height: 100vh; /* Maximum height of the info section */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Background color of the info section */
+  overflow-y: auto; /* Enable scrolling if content exceeds container height */
+}
+
+.blog-post img {
+  width: 100%; 
+  max-width: 100%; 
+  height: auto; 
+  margin-bottom: 10px; 
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.info:hover {
+  background-color: #ddd; /* Change the background color on hover */
+}
+
+/* Enhance the design of the input area */
+#contact-form {
+  color: #1BAA87;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  background-size: cover;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px; /* Add bottom margin to create space between form and footer */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type=text],
+input[type=email],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition */
+}
+
+input[type=submit]:hover {
+  background-color: #0d4112;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.input-field {
+  flex: 0 1 48%; /* Adjust the width of the input fields */
+  margin-bottom: 16px; /* Add some bottom margin to separate each field */
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.input-field input,
+.input-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+#objective {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px; /* Adjust margin-top as needed */
+}
+
+.objective-text {
+  flex: 1;
+  padding-right: 20px; /* Adjust spacing between text and image */
+}
+
+.profile-image {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease-in-out; /* Transition for the image effect */
+}
+
+.profile-image img:hover {
+  transform: scale(1.1); /* Example effect: increase image size on hover */
+}
+
+.youtube-video {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.video {
+  position: relative;
+}
+
+.video img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  /* Style your play button, e.g., a triangle or 'play' icon */
+}
+
+.video-info {
+  padding: 20px;
+}
+
+.video-info h2 {
+  margin-top: 0;
+}
+
+.video-info p {
+  margin-bottom: 0;
+}
+
+.skills-hobbies-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.skills,
+.hobbies {
+  width: calc(50% - 10px); /* 50% width with a margin between them */
+}
+
+/* Define the square-container style */
+.square-container {
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.square-container {
+  display: flex;
+  justify-content: space-around; /* Adjust as needed */
+}
+
+.skills, .hobbies {
+  width: 45%; /* Adjust width as needed */
+}
+
+a.resume-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 80px; /* Adding bottom margin */
+}
+
+a.resume-button:hover {
+  background-color: #2980b9;
+}
+
+/* Adjust the button style to make it more noticeable */
+a.resume-button::after {
+  content: "\f019"; /* Unicode for download icon */
+  font-family: FontAwesome; /* Use FontAwesome for the icon */
+  margin-left: 10px;
+}
+
+/* Style the icon */
+a.resume-button::after {
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.input-container {
+  background-image: url('back3.jpg');
+  background-repeat: no-repeat; /* Image won't repeat */
+  background-size: cover; /* Image covers the container */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255); /* Set text color to white */
+}
+
+.input-container input[type="text"],
+.input-container input[type="email"],
+.input-container input[type="submit"],
+.input-container textarea {
+  color: black;
+  /* Add any other necessary styles for the input fields */
+}
+
+
+.home-page-text {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: transparent;
+  padding: 4px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  font-family: 'Righteous', cursive;
+}
+
+.home-page-text:hover {
+  color: #1BAA87;
+}
+
+.about-page-text {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: transparent;
+  padding: 4px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  font-family: 'Righteous', cursive;
+}
+
+.about-page-text:hover {
+  color: #1BAA87;
+}
+
+.contact-page-text {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: transparent;
+  padding: 4px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  font-family: 'Righteous', cursive;
+}
+
+.contact-page-text:hover {
+  color: #1BAA87;
+}
+
+.portfolio-page-text {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: transparent;
+  padding: 4px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  font-family: 'Righteous', cursive;
+}
+
+.portfolio-page-text:hover {
+  color: #1BAA87;
+}
+
+.blog-page-text {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: transparent;
+  padding: 4px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  font-family: 'Righteous', cursive;
+}
+
+.blog-page-text:hover {
+  color: #1BAA87;
+}
+
+.video-page-text {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: transparent;
+  padding: 4px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  font-family: 'Righteous', cursive;
+}
+
+.video-page-text:hover {
+  color: #1BAA87;
+}
+
+.contact-page-text {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: transparent;
+  padding: 4px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  font-family: 'Righteous', cursive;
+}
+
+.contact-page-text:hover {
+  color: #1BAA87;
+}
+
+.image-frame {
+  border: 4px solid #1BAA87; /* Define the border width and color */
+  padding: 10px; /* Add padding around the image */
+  border-radius: 10px; /* Optionally, add border-radius for rounded corners */
+  max-width: 300px; /* Set a maximum width for the frame */
+  margin: 0 auto; /* Center the frame horizontally */
+}
+
+nav ul li {
+  display: inline-block;
+  position: relative;
+  margin-right: 20px;
+}
+
+nav ul li.blog:hover .sub-menu {
+  display: block;
+}
+
+nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(20px); 
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+  position: relative;
+}
+
+/* Adjust margins and spacing for sub-menu */
+nav ul li.blog .sub-menu {
+  display: none;
+  position: absolute;
+  background: transparent;
+  padding: 6px; /* Reduce the padding */
+  border-radius: 3px; /* Adjust the border-radius */
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  border: 1px solid #333; /* Adjust the border thickness */
+  text-align: left;
+  width: auto;
+  min-width: 100px;
+  white-space: nowrap;
+  color: #1BAA87; /* Change the font color */
+}
+
+/* Ensure proper display on hover */
+nav ul li.blog:hover .sub-menu {
+  display: block;
+}
+
+nav ul li a::before {
+  /* ... */
+  transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+nav ul li a:hover::before {
+  /* ... */
+  width: 0;
+  height: 0;
+  opacity: 1;
+  transition: none; /* Remove the transition here to prevent jitter */
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  background: #fff; /* Background color matching the navigation */
+  padding: 10px;
+  border-radius: 5px;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  border: none; /* Border color matching the main navigation */
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding a subtle box shadow */
+}
+
+/* Display the sub-menu on hover */
+nav ul li:hover .sub-menu {
+  display: block;
+}
+
+/* Apply similar styles to the links in the sub-menu */
+.sub-menu a {
+  display: block;
+  text-decoration: none;
+  color: #1BAA87; /* Set the default font color */
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Apply hover effect to the sub-menu links */
+.sub-menu a:hover {
+  background-color: #D9F3FF; /* Match the sub-menu background color */
+  color: #1BAA87;
+}
+
+nav ul li.video:hover .sub-menu {
+  border: none; /* Remove the border */
+  /* Other styles as needed */
+}

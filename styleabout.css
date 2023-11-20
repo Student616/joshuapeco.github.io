@@ -1,0 +1,94 @@
+.container {
+    position: relative;
+    max-width: 800px; /* Set the maximum width of the slider container */
+    margin: 0 auto; /* Center the slider on the page */
+    background-color: black;
+    background-image: url('back2.avif');
+    background-size: cover;
+}
+
+.mySlides {
+    display: none;
+    background-color: black; /* Set the background color of the slide menu */
+    height: 450px; /* Fixed height for the slide container */
+    /* Add other styles as needed */
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 3px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+}
+
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 16.66%;
+}
+
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain the aspect ratio and cover the container */
+}
+
+.column .demo {
+    width: 150px; /* Set the width to your desired size */
+    height: 110px; /* Set the height to your desired size */
+    box-sizing: border-box; /* Optional: Include padding and border in the element's total width and height */
+}
